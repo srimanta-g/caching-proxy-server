@@ -17,6 +17,7 @@
 		"axios": "^1.8.4",
 		"caching-proxy-server": "file:",
 		"express": "^4.21.2",
+		"redis": "^4.7.0",
 		"yargs": "^17.7.2"
 	},
 	"devDependencies": {

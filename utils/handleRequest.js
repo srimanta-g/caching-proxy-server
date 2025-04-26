@@ -1,4 +1,4 @@
-const { getRequest } = require("./requests.js");
+const { getRequest } = require("../utils/requests");
 
 const handleRequest = (url, method) => {
 	return new Promise((resolve, reject) => {
