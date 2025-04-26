@@ -1,16 +1,9 @@
-const axios = require("axios");
+const { getRequest } = require("./requests.js");
 
 const handleRequest = (url, method) => {
 	return new Promise((resolve, reject) => {
 		if (method === "GET") {
-			axios.get(url)
-				.then((res) => {
-					// console.log(res);
-					resolve(res);
-				})
-				.catch((error) => {
-					reject(error);
-				});
+			getRequest(url, resolve, reject);
 		} else {
 			reject("Unsupported method");
 		}
