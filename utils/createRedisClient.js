@@ -3,12 +3,12 @@ const RedisClient = (function () {
 	let instance;
 
 	async function createClientInstance() {
-		try {
-			const obj = createClient().connect();
-			return obj;
-		} catch (error) {
-			console.log(error);
-		}
+		const client = await createClient()
+			.on("error", (err) =>
+				console.log("Redis Client Error", err)
+			)
+			.connect();
+		return client;
 	}
 
 	return {
